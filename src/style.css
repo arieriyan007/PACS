@@ -451,3 +451,94 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Dashboard */
+/* Area utama halaman Dashboard. */
+.dashboard-page {
+  min-height: calc(100vh - 76px);
+  padding: 32px;
+  background: #f5f7fb;
+}
+
+/* Menyusun kartu ringkasan dalam beberapa kolom. */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Kartu statistik Dashboard. */
+.summary-card {
+  position: relative;
+  min-height: 160px;
+  overflow: hidden;
+  border: 1px solid #e4e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.06);
+}
+
+/* Garis warna sebagai penanda visual kartu. */
+.summary-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  content: '';
+  background: #4776e6;
+}
+
+/* Warna berbeda untuk setiap jenis ringkasan. */
+.summary-card:nth-child(2)::before {
+  background: #f0ad4e;
+}
+
+.summary-card:nth-child(3)::before {
+  background: #8b6dde;
+}
+
+.summary-card:nth-child(4)::before {
+  background: #55c98c;
+}
+
+.summary-card span,
+.summary-card strong,
+.summary-card small {
+  display: block;
+}
+
+.summary-card span {
+  color: #65728a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.summary-card strong {
+  margin: 18px 0 8px;
+  color: #172033;
+  font-size: 36px;
+  line-height: 1;
+}
+
+.summary-card small {
+  color: #8793a8;
+  font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard-page {
+    padding: 20px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
