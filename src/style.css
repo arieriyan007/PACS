@@ -542,3 +542,173 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Halaman Study */
+/* Area utama halaman Detail Studi. */
+.study-detail-page {
+  min-height: calc(100vh - 76px);
+  padding: 32px;
+  background: #f5f7fb;
+}
+
+/* Jarak antar bagian detail studi. */
+.study-detail-content {
+  display: grid;
+  gap: 20px;
+}
+
+/* Kartu informasi pada halaman detail. */
+.study-detail-page .worklist-card {
+  min-height: auto;
+  padding: 24px;
+}
+
+/* Judul setiap kartu detail. */
+.study-detail-page .worklist-card h2 {
+  margin-bottom: 20px;
+  color: #172033;
+  font-size: 18px;
+}
+
+/* Baris informasi metadata studi. */
+.study-detail-page .worklist-card p {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 14px;
+  color: #65728a;
+}
+
+.study-detail-page .worklist-card p:last-child {
+  margin-bottom: 0;
+}
+
+.study-detail-page .worklist-card p strong {
+  color: #172033;
+  text-align: right;
+}
+
+/* Daftar series studi. */
+.study-detail-page ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Satu item series. */
+.study-detail-page li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid #e4e8f0;
+  border-radius: 10px;
+  padding: 16px;
+  background: #f8faff;
+}
+
+.study-detail-page li strong {
+  color: #172033;
+}
+
+.study-detail-page li span {
+  color: #65728a;
+  font-size: 13px;
+  text-align: right;
+}
+
+/* Tombol kembali agar tidak tampil seperti link default browser. */
+.study-detail-page > .primary-button {
+  display: inline-flex;
+  margin-top: 24px;
+  text-decoration: none;
+}
+
+/* Tampilan layar kecil. */
+@media (max-width: 760px) {
+  .study-detail-page {
+    padding: 20px;
+  }
+
+  .study-detail-page .worklist-card p,
+  .study-detail-page li {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .study-detail-page .worklist-card p strong,
+  .study-detail-page li span {
+    text-align: left;
+  }
+}
+
+/* Halaman Studi */
+/* Halaman daftar seluruh studi radiologi */
+.studies-page {
+  min-height: calc(100vh - 76px);
+  padding: 32px;
+  background: #f5f7fb;
+}
+
+/* Bagian judul dan tombol halaman */
+.page-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Kartu utama daftar studi */
+.studies-card {
+  min-height: 260px;
+  padding: 24px;
+}
+
+/* Tautan untuk membuka detail studi */
+.table-link {
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.table-link:hover {
+  text-decoration: underline;
+}
+
+/* Tombol sekunder untuk navigasi tambahan */
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  color: #334155;
+  background: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.secondary-button:hover {
+  background: #f8fafc;
+}
+
+@media (max-width: 760px) {
+  .studies-page {
+    padding: 20px;
+  }
+
+  .page-heading {
+    flex-direction: column;
+  }
+
+  .studies-card {
+    overflow-x: auto;
+    padding: 16px;
+  }
+}

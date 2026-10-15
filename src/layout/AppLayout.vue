@@ -27,13 +27,10 @@ import { RouterLink, RouterView } from 'vue-router'
           Worklist
         </RouterLink>
 
-        <span
-          class="navigation-item navigation-item-disabled"
-          aria-disabled="true"
-        >
-          <span aria-hidden="true">◉</span>
+        <RouterLink to="/studies" class="navigation-item" active-class="active">
+          <span aria-hidden="true">icon </span>
           Studies
-        </span>
+        </RouterLink>
 
         <span
           class="navigation-item navigation-item-disabled"
