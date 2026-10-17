@@ -1,9 +1,10 @@
 import type { StudySummary } from '../types/study'
 
+// data dummy pasien
 export const mockStudies: StudySummary[] = [
     {
-        studyInstanceUid: 'Tn. Bambang',
-        patientId: '1234',
+        studyInstanceUid: 'DEMO-STUDY-001',
+        patientId: 'DEMO-PATIENT-001',
         patientName: 'Tn. Bambang',
         modality: 'CT',
         studyDate: '2026-10-12',
@@ -11,8 +12,8 @@ export const mockStudies: StudySummary[] = [
         status: 'baru',
     },
     {
-        studyInstanceUid: 'Ny. Sumarni',
-        patientId: '1235',
+        studyInstanceUid: 'DEMO-STUDY-002',
+        patientId: 'DEMO-PATIENT-002',
         patientName: 'Ny. Sumarni',
         modality: 'MR',
         studyDate: '2026-10-11',
@@ -20,8 +21,8 @@ export const mockStudies: StudySummary[] = [
         status: 'proses-review',
     },
     {
-        studyInstanceUid: 'Tn. Oscar Delahoya',
-        patientId: '1236',
+        studyInstanceUid: 'DEMO-STUDY-003',
+        patientId: 'DEMO-PATIENT-003',
         patientName: 'Tn. Oscar Delahoya',
         modality: 'CR',
         studyDate: '2026-10-10',

@@ -27,11 +27,6 @@ import { RouterLink, RouterView } from 'vue-router'
           Worklist
         </RouterLink>
 
-        <RouterLink to="/studies" class="navigation-item" active-class="active">
-          <span aria-hidden="true">icon </span>
-          Studies
-        </RouterLink>
-
         <span
           class="navigation-item navigation-item-disabled"
           aria-disabled="true"

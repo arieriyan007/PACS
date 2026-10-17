@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
+import { RouterLink } from "vue-router";
 import type { StudyStatus, StudySummary } from '../types/study';
 import { ambilDaftarStudi } from '../services/study.service';
 
@@ -176,6 +177,7 @@ onMounted(muatDaftarStudi)
                     <th scope="col">Modalitas</th>
                     <th scope="col">Pemeriksaan</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Aksi</th>
                     </tr>
                 </thead>
 
@@ -194,9 +196,14 @@ onMounted(muatDaftarStudi)
                     <td>{{ studi.studyDescription }}</td>
 
                     <td>
-                        <span class="status-badge" :class="`status-$(studi.status)`">
+                        <span class="status-badge" :class="`status-${studi.status}`">
                             {{ labelStatus[studi.status] }}
                         </span>
+                    </td>
+                    <td>
+                        <RouterLink :to="`/studies/${encodeURIComponent(studi.studyInstanceUid)}`" class="table-link">
+                            Lihat detail
+                        </RouterLink>
                     </td>
 
                     </tr>

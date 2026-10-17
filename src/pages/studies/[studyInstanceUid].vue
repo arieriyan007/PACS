@@ -3,7 +3,7 @@ import StudyHeader from '../../components/study/StudyHeader.vue';
 import StudyMetadataCard from '../../components/study/StudyMetadataCard.vue';
 import SeriesList from '../../components/study/SeriesList.vue';
 
-import { computed, onMounted, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useRoute, RouterLink } from 'vue-router';
 import type { StudyDetail } from '../../types/study-detail';
 import { ambilDetailStudi } from '../../services/study-detail.service';
@@ -41,10 +41,13 @@ async function muatDetailStudi() {
     } finally {
         sedangMemuat.value = false
     }
+
 }
 
-// Memuat detail saat halaman pertma kali dibuka.
-onMounted(muatDetailStudi)
+// Jalankan ulang pemuatan setiap UID pada URL berubah.
+    watch(studyInstanceUid, muatDetailStudi, { immediate: true })
+
+
 </script>
 
 <template>

@@ -5,7 +5,7 @@ import type { StudyDetail } from "../types/study-detail";
 export const mockStudyDetails: StudyDetail[] = [
     {
         studyInstanceUid: 'DEMO-STUDY-001',
-        patientId: '1234',
+        patientId: 'DEMO-PATIENT-001',
         patientName: 'Tn. Bambang',
         modality: 'CT',
         studyDate: '2026-10-12',
