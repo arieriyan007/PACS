@@ -712,3 +712,114 @@ h1 {
     padding: 16px;
   }
 }
+
+/* Menata gambar dan keterangan series dalam satu baris. */
+.study-detail-page .series-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Mengatur ukuran pratinjau radiologi. */
+.study-detail-page .series-preview {
+  width: 96px;
+  height: 96px;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #101827;
+}
+
+/* Memberi jarak antara nama series dan UID. */
+.study-detail-page .series-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.study-detail-page .series-copy small {
+  color: #8793a8;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+/* Menyusun thumbnail dan informasi series berdampingan. */
+.study-detail-page .series-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Membuat thumbnail dapat dikenali sebagai tombol. */
+.series-preview-button {
+  flex: 0 0 auto;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  background: #101827;
+  cursor: zoom-in;
+}
+
+.series-preview-button:focus-visible,
+.series-preview-close:focus-visible {
+  outline: 3px solid #4776e6;
+  outline-offset: 3px;
+}
+
+/* Mengatur ukuran thumbnail pada daftar series. */
+.study-detail-page .series-preview {
+  display: block;
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+/* Menampilkan dialog di tengah layar. */
+.series-preview-dialog {
+  width: min(900px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100vh - 32px);
+  margin: auto;
+  border: 1px solid #344054;
+  border-radius: 14px;
+  padding: 20px;
+  color: #ffffff;
+  background: #101827;
+}
+
+/* Lapisan gelap di belakang dialog. */
+.series-preview-dialog::backdrop {
+  background: rgb(10 16 28 / 75%);
+}
+
+/* Menata isi dialog dan tombol tutup. */
+.series-preview-dialog-content {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+}
+
+.series-preview-close {
+  justify-self: end;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #ffffff;
+  background: #344054;
+  cursor: pointer;
+}
+
+/* Membatasi gambar agar muat di layar. */
+.series-preview-dialog-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+.series-preview-dialog-content p {
+  margin: 0;
+  color: #ffffff;
+}

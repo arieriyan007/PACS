@@ -14,6 +14,9 @@ export interface StudySeries {
 
     // jumlah gambar atyau frame di dalam series.
     jumlahImage: number
+
+    // Lokasi gambar pratinjau lokal; tidak semua series harus memilikinya.
+    gambarPratinjau?: string
 }
 
 // Bentuk lengkap detail studi radiologi.
