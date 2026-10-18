@@ -823,3 +823,84 @@ h1 {
   margin: 0;
   color: #ffffff;
 }
+
+/* Mengatur bagian identitas dokter dan status bacaan. */
+.study-report-card .report-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.study-report-card .report-heading strong,
+.study-report-card .report-heading time {
+  display: block;
+}
+
+.study-report-card .report-heading time {
+  margin-top: 6px;
+  color: #65728a;
+  font-size: 13px;
+}
+
+/* Label status untuk membedakan bacaan draf dan final. */
+.report-status {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.report-status-draf {
+  color: #8a5a00;
+  background: #fff1c7;
+}
+
+.report-status-final {
+  color: #246b4c;
+  background: #dff5e9;
+}
+
+/* Menata isi temuan dan kesan bacaan. */
+.study-report-card .report-section {
+  margin-top: 20px;
+}
+
+.study-report-card .report-section h3 {
+  margin: 0 0 8px;
+  color: #172033;
+  font-size: 14px;
+}
+
+.study-report-card .report-section p {
+  display: block;
+  margin: 0;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* Catatan bahwa bacaan yang terlihat adalah data contoh. */
+.study-report-card .report-demo-note {
+  display: block;
+  margin: 24px 0 0;
+  color: #8793a8;
+  font-size: 12px;
+}
+
+/* Pesan jika dokter belum menambahkan hasil bacaan. */
+.study-report-card .report-empty {
+  display: block;
+  margin: 0;
+  border-radius: 10px;
+  padding: 16px;
+  color: #65728a;
+  background: #f8faff;
+}
+
+@media (max-width: 760px) {
+  .study-report-card .report-heading {
+    flex-direction: column;
+  }
+}

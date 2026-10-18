@@ -2,6 +2,7 @@
 import StudyHeader from '../../components/study/StudyHeader.vue';
 import StudyMetadataCard from '../../components/study/StudyMetadataCard.vue';
 import SeriesList from '../../components/study/SeriesList.vue';
+import StudyReportCard from "../../components/study/StudyReportCard.vue";
 
 import { computed, ref, watch } from 'vue';
 import { useRoute, RouterLink } from 'vue-router';
@@ -75,6 +76,8 @@ async function muatDetailStudi() {
             <StudyHeader :detail-studi="detailStudi" />
 
             <StudyMetadataCard :detail-studi="detailStudi" />
+
+            <StudyReportCard :hasil-bacaan="detailStudi.hasilBacaan" />
 
             <SeriesList :series="detailStudi.series" />
         </div>
