@@ -59,6 +59,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/reports/[studyInstanceUid]': RouteRecordInfo<
+      '/reports/[studyInstanceUid]',
+      '/reports/:studyInstanceUid',
+      { studyInstanceUid: ParamValue<true> },
+      { studyInstanceUid: ParamValue<false> },
+      | never
+    >,
     '/studies/': RouteRecordInfo<
       '/studies/',
       '/studies',
@@ -124,6 +131,14 @@ declare module 'vue-router/auto-routes' {
         | never
       pathParamNames:
         | never
+    }
+    'src/pages/reports/[studyInstanceUid].vue': {
+      routes:
+        | '/reports/[studyInstanceUid]'
+      views:
+        | never
+      pathParamNames:
+        | 'studyInstanceUid'
     }
     'src/pages/studies/index.vue': {
       routes:
