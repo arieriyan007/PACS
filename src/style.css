@@ -1173,3 +1173,20 @@ h1 {
   color: #71809a;
   font-size: 13px;
 }
+
+/* Menata QR dan petunjuk pemindaian di kartu hasil bacaan. */
+.report-qr {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e1e8f2;
+}
+
+.report-qr p,
+.report-qr-note {
+  margin: 0;
+  color: #65728a;
+  font-size: 14px;
+}

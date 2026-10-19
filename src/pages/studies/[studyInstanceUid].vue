@@ -77,7 +77,10 @@ async function muatDetailStudi() {
 
             <StudyMetadataCard :detail-studi="detailStudi" />
 
-            <StudyReportCard :hasil-bacaan="detailStudi.hasilBacaan" />
+            <StudyReportCard    :hasil-bacaan="detailStudi.hasilBacaan"
+                                :status-studi="detailStudi.status"
+                                :study-instance-uid="detailStudi.studyInstanceUid"
+            />
 
             <SeriesList :series="detailStudi.series" />
         </div>

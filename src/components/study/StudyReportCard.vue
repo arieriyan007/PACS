@@ -1,14 +1,42 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+import type { StudyStatus } from '../../types/study';
 import type { ReportStatus, StudyReport } from '../../types/study-detail';
+import { computed } from 'vue';
+import QrcodeVue from 'qrcode.vue';
 
 
 interface PropertiStudyReportCard {
     // nilai null berarti dokter belum menambahkan bacaan.
     hasilBacaan: StudyReport | null
+
+    // status studi menentukan apakah hasil sudah selesai.
+    statusStudi: StudyStatus
+
+    // UID dipakai sebagai parameter route laporan, bukan data di dalam QR.
+    studyInstanceUid: string
 }
 
 // Menerima hasil bacaan dari halmaan detail studi.
 const properti = defineProps<PropertiStudyReportCard>()
+const router = useRouter()
+
+// QR hanya boleh tampil jika studi selesai dan bacaan sudah final.
+const qrBisaDitampilkan = computed(
+    () => properti.statusStudi === 'selesai' && properti.hasilBacaan?.status == 'final'
+)
+
+// membuat URL penuh ke route laporan agar bisa dipindai dari perangkat lain.
+const urlLaporan = computed (() => {
+    if (typeof window === 'undefined') return '' 
+        
+    const routeLaporan = router.resolve({
+        name: '/reports/[studyInstanceUid]',
+        params: { studyInstanceUid: properti.studyInstanceUid },
+    })
+
+    return new URL(routeLaporan.href, window.location.origin).toString()
+})
 
 // Mengubah kode status menjadi label yang ditampilkan kepada user.
 const labelStatus: Record<ReportStatus, string> = {
@@ -33,7 +61,7 @@ function formatTanggal(tanggal: string): string {
         </p>
 
         <div class="report-content" v-else>
-            <div class="report-heading">
+            <div class="report-heading">                
                 <div>
                     <strong>{{ properti.hasilBacaan.namaDokter }}</strong>
 
@@ -62,5 +90,23 @@ function formatTanggal(tanggal: string): string {
             </p>
         </div>
         
+        <!-- QR dan tautan hanya tersedia untuk studi selesai dengan bacaan final. -->
+                 <div v-if="qrBisaDitampilkan" class="report-qr">
+                    <QrcodeVue :value="urlLaporan" :size="180" level="M" render-as="svg" />
+
+                    <p>Pindai QR untuk membuka hasil bacaan.</p>
+
+                    <RouterLink class="primary-button" :to="{
+                        name: '/reports/[studyInstanceUid]',
+                        params: { studyInstanceUid: properti.studyInstanceUid },
+                    }">
+                        Buka hasil laporan
+                    </RouterLink>
+                 </div>
+
+                 <p v-else-if="
+                 properti.hasilBacaan?.status === 'final' && properti.statusStudi !== 'selesai'">
+                    QR tersedia setelah status studi selesai. 
+                </p>
     </article>
 </template>
