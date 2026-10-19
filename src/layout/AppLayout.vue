@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRouter } from 'vue-router'
+
+// Router mengarahkan petugas ke halaman login saat memilih logout.
+const router = useRouter()
+
+function keluarDemo(): void {
+  // Saat ini hanya kembali ke login; belum ada sesi backend untuk dihapus.
+  void router.replace('/login')
+}
 </script>
 
 <template>
@@ -10,7 +18,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
         <div>
           <strong>PACS</strong>
-          <span>Medical Imaging</span>
+          <span>RSUD Imaging</span>
         </div>
       </div>
 
@@ -48,14 +56,32 @@ import { RouterLink, RouterView } from 'vue-router'
           <span class="breadcrumb">PACS / Worklist</span>
         </div>
 
-        <div class="user-profile">
-          <div class="avatar">SA</div>
+       <!-- Menu ini hanya menampilkan profil petugas dummy -->
+        <details class="user-menu">
+          <summary class="user-profile" aria-label="Buka menu profil petugas">
+             <!-- Profil statis hanya untuk tampilan petugas -->
+                <div class="avatar" aria-hidden="true">SP</div>
 
-          <div>
-            <strong>Super Admin</strong>
-            <span>Administrator</span>
+                <div class="user-profile-info">
+                  <strong>Siti Patimah</strong>
+                  <span>Radiografer . Radiologi</span>
+                  <small>ID Pegawai: PGW-001</small>
+                </div>
+
+                <span class="user-menu-arrow" aria-hidden="true">↓</span>
+          </summary>
+
+          <div class="user-menu-panel">
+            <RouterLink class="user-menu-link" to="/profile">
+              Profile Saya
+            </RouterLink>
+
+            <button type="button" class="user-menu-link user-menu-logout" @click="keluarDemo">
+                Logout
+            </button>
+
           </div>
-        </div>
+        </details>
       </header>
 
       <RouterView />

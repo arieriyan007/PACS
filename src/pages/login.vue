@@ -74,7 +74,7 @@ async function tanganiMasuk(): Promise<void> {
 
                 <p class="login-error" role="alert" v-if="pesanError">{{ pesanError }}</p>
 
-                <button type="button" class="primary-button login-submit" :disabled="tombolDinonaktifkan">
+                <button type="submit" class="primary-button login-submit" :disabled="tombolDinonaktifkan">
                     {{ sedangMemuat ? 'Memproses...' : 'Masuk' }}
                 </button>
             </form>

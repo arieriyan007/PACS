@@ -1044,3 +1044,132 @@ h1 {
     border-radius: 16px;
   }
 }
+
+/* Menyusun identitas petugas demo dalam tiga baris yang ringkas. */
+.user-profile-info {
+  display: grid;
+  gap: 3px;
+}
+
+.user-profile-info strong {
+  color: #172033;
+}
+
+.user-profile-info span,
+.user-profile-info small {
+  color: #71809a;
+  font-size: 12px;
+}
+
+.user-profile-info small {
+  display: block;
+}
+
+/* Menyembunyikan ID di layar sempit agar header tidak terlalu padat. */
+@media (max-width: 520px) {
+  .user-profile-info small {
+    display: none;
+  }
+}
+
+/* Menjadikan area identitas di header sebagai tombol pembuka menu. */
+.user-menu {
+  position: relative;
+}
+
+.user-menu summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.user-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.user-menu summary:focus-visible,
+.user-menu-link:focus-visible {
+  outline: 3px solid rgb(71 118 230 / 35%);
+  outline-offset: 3px;
+}
+
+.user-menu-arrow {
+  color: #71809a;
+}
+
+.user-menu-panel {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 190px;
+  padding: 6px;
+  border: 1px solid #e1e8f2;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgb(24 39 75 / 14%);
+}
+
+.user-menu-link {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #34425a;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.user-menu-link:hover {
+  background: #f3f6fb;
+}
+
+.user-menu-logout {
+  color: #bd3030;
+}
+
+/* Memberi jarak dan tampilan kartu pada halaman profil. */
+.profile-page {
+  padding: 32px;
+}
+
+.profile-card {
+  max-width: 720px;
+  margin-top: 24px;
+  padding: 28px;
+  border: 1px solid #e1e8f2;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.profile-avatar {
+  width: 56px;
+  height: 56px;
+  font-size: 16px;
+}
+
+.profile-details {
+  display: grid;
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.profile-details dt {
+  margin-bottom: 4px;
+  color: #71809a;
+  font-size: 13px;
+}
+
+.profile-details dd {
+  margin: 0;
+  color: #172033;
+  font-weight: 650;
+}
+
+.profile-demo-note {
+  color: #71809a;
+  font-size: 13px;
+}
